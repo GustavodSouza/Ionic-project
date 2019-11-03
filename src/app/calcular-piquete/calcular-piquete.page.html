@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Calcular Piquete
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cálculo Número Piquetes</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Periodo de descanso</ion-label>
+        <ion-input type="number" placeholder="Insira o periodo de descanso" [(ngModel)]="piquete.periodoDescanso"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Periodo de ocupação</ion-label>
+        <ion-input type="number" placeholder="Insira o periodo de ocupação" [(ngModel)]="piquete.periodoOcupacao"></ion-input>
+      </ion-item>
+      <ion-label color="dark">Piquetes necessários</ion-label>
+      <ion-item lines="full">
+          <ion-label id="resultado">0</ion-label>
+      </ion-item>
+      <ion-button expand="block" (click)="calcular()">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

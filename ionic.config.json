@@ -1,0 +1,7 @@
+{
+  "name": "appPiquete",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

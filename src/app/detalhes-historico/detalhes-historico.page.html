@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>
+      Histórico detalhado
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="center">Cálculo realizado em: {{piquete.dataCompleta}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label color="dark">Periodo de descanso inserido</ion-label>
+      <ion-item lines="full">
+          <ion-label>{{piquete.periodoDescanso}}</ion-label>
+        </ion-item>
+      <ion-label color="dark">Periodo de ocupação inserido</ion-label>
+      <ion-item lines="full">
+          <ion-label>{{piquete.periodoOcupacao}}</ion-label>
+      </ion-item>
+      <ion-label color="dark">Piquetes necessários</ion-label>
+      <ion-item lines="full">
+          <ion-label>{{piquete.resultadoPiquete}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+    <div class="center">
+      <ion-button  size="full" color="danger" (click)="deletar(piquete)">Excluir</ion-button>
+    </div>
+    
+  </ion-card>
+</ion-content>

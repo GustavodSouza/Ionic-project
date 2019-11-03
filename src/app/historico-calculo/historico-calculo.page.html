@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Histórico de Cálculos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="center">Histórico de piquetes</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngIf="piquete == 0">
+            <div class="vertical-center">
+                <div class="center">
+                  <ion-img src="../assets/imgs/ops.png" class="ion-align-self-end"></ion-img>
+                  <h2>Histórico vazio!!!</h2>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item *ngFor="let historico of piquete">
+          <ion-label (click)="selecionado(historico)">{{historico.resultadoPiquete}} piquetes</ion-label>
+          <ion-icon name="trash" color="danger" (click)="deletar(historico)"></ion-icon>
+        </ion-item>
+      </ion-list>
+      <hr><br><ion-card-title>Histórico de consumo anim.</ion-card-title>
+      <ion-list>
+        <ion-item>
+          <ion-label>Teste</ion-label>
+          <ion-icon name="trash" color="danger" (click)="deletar(historico)"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
