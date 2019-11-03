@@ -1,4 +1,4 @@
-# Ionic-piquete
+# Ionic-project
 
 <h1>Project for discipline of programming for mobile device</h1> 
 
