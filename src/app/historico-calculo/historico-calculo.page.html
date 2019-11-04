@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,21 +9,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content color="secondary">
+  <ion-card color="light">
     <ion-card-header>
-      <ion-card-title class="center">Histórico de piquetes</ion-card-title>
+      <ion-card-title>Histórico de piquetes</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
       <ion-list>
         <ion-item *ngIf="piquete == 0">
-            <div class="vertical-center">
-                <div class="center">
-                  <ion-img src="../assets/imgs/ops.png" class="ion-align-self-end"></ion-img>
-                  <h2>Histórico vazio!!!</h2>
-                </div>
-            </div>
+          <ion-label class="center">Histórico de piquetes vazio!</ion-label>
         </ion-item>
         <ion-item *ngFor="let historico of piquete">
           <ion-label (click)="selecionado(historico)">{{historico.resultadoPiquete}} piquetes</ion-label>

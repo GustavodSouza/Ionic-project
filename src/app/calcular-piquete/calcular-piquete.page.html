@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,17 +9,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content color="secondary">
+  <ion-card color="light">
     <ion-card-header>
       <ion-card-title>Cálculo Número Piquetes</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Periodo de descanso</ion-label>
-        <ion-input type="number" placeholder="Insira o periodo de descanso" [(ngModel)]="piquete.periodoDescanso"></ion-input>
-      </ion-item>
+      <ion-list>
+        <ion-list-header>Tipo de capim</ion-list-header>
+      
+        <ion-item>
+          <ion-label>Capim</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Brachiarão</ion-select-option>
+            <ion-select-option value="m">Braquiária</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+      </ion-list>
       <ion-item>
         <ion-label position="floating">Periodo de ocupação</ion-label>
         <ion-input type="number" placeholder="Insira o periodo de ocupação" [(ngModel)]="piquete.periodoOcupacao"></ion-input>
@@ -28,7 +36,7 @@
       <ion-item lines="full">
           <ion-label id="resultado">0</ion-label>
       </ion-item>
-      <ion-button expand="block" (click)="calcular()">Calcular</ion-button>
+      <ion-button expand="block" (click)="calcular()" color="primary">Calcular</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

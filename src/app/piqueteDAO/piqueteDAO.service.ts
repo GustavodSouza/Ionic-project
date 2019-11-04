@@ -23,7 +23,7 @@ export class PiqueteDaoService {
                                                   // e o objeto.
   }
 
-  //Função que retorna todos os contatos do Storage.
+  //Função que retorna todos os dados do Storage.
   public getCalculo() {
     let any: PiqueteModel[] = []
 

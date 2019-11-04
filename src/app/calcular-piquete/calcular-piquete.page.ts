@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PiqueteModel } from '../model/piqueteModel';
-import { Router } from '@angular/router';
 import { PiqueteDaoService } from '../piqueteDAO/piqueteDAO.service';
 
 @Component({
@@ -17,22 +16,23 @@ export class CalcularPiquetePage implements OnInit {
   ngOnInit() {
   }
 
-  calcular(): number {
+  calcular(): void {
     let resultado;
 
-    //Realiza o calculo de acordo com a fórmula;
-    resultado = (this.piquete.periodoDescanso / this.piquete.periodoOcupacao)+1;
     
-    //------------OBTER A DATA DO SISTEMA------------//
-    let data = new Date(); //Instancia um objeto data.
-    let dia = data.getDate(); //dia
-    let mes = data.getUTCMonth()+1; //mes
-    let ano = data.getFullYear(); //ano
+
+    //Formula do piquete;
+    //resultado = (this.piquete.periodoDescanso / this.piquete.periodoOcupacao)+1;
+    
+    let data = new Date(); 
+    let dia = data.getDate(); 
+    let mes = data.getUTCMonth()+1;
+    let ano = data.getFullYear(); 
   
-    this.piquete.dataCompleta = dia.toString().concat('/').concat(mes.toString()).concat('/').concat(ano.toString());
-    this.piquete.resultadoPiquete = resultado.toFixed(2); //Adiciono ao objeto o resultado do calculo.
+    /*this.piquete.dataCompleta = dia.toString().concat('/').concat(mes.toString()).concat('/').concat(ano.toString());
+    this.piquete.resultadoPiquete = resultado.toFixed(0); //Adiciono ao objeto o resultado do calculo.
     this.piqueteDAO.salvarPiquete(this.piquete);
-    return (document.getElementById('resultado').innerHTML = resultado.toFixed(2));
+    document.getElementById('resultado').innerHTML = resultado.toFixed(0);*/
   }
 
 }
