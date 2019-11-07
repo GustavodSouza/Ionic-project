@@ -3,5 +3,6 @@ export class PiqueteModel {
                 public periodoDescanso?: number,
                 public periodoOcupacao?: number,
                 public resultadoPiquete?: number,
-                public dataCompleta?: string) {}
+                public dataCompleta?: string,
+                public tipo?: string) {}
 }

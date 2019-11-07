@@ -3,8 +3,8 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Histórico de Cálculos
+    <ion-title class="cursive">
+      Histórico de cálculos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,24 +12,57 @@
 <ion-content color="secondary">
   <ion-card color="light">
     <ion-card-header>
-      <ion-card-title>Histórico de piquetes</ion-card-title>
+      <ion-item>
+        <ion-label class="title-card">Piquete(s)</ion-label>
+      </ion-item>
     </ion-card-header>
-  
     <ion-card-content>
       <ion-list>
         <ion-item *ngIf="piquete == 0">
           <ion-label class="center">Histórico de piquetes vazio!</ion-label>
         </ion-item>
-        <ion-item *ngFor="let historico of piquete">
-          <ion-label (click)="selecionado(historico)">{{historico.resultadoPiquete}} piquetes</ion-label>
-          <ion-icon name="trash" color="danger" (click)="deletar(historico)"></ion-icon>
+        <ion-item *ngFor="let historicoPiquete of piquete">
+          <ion-label (click)="piqueteSelecionado(historicoPiquete)">{{historicoPiquete.resultadoPiquete}} piquetes
+          </ion-label>
+          <ion-icon name="trash" color="danger" (click)="deletar(historicoPiquete)"></ion-icon>
         </ion-item>
       </ion-list>
-      <hr><br><ion-card-title>Histórico de consumo anim.</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="light" *ngIf="consumo == 0">
+    <ion-card-header>
+      <ion-item>
+        <ion-label class="title-card">Consumo</ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Teste</ion-label>
-          <ion-icon name="trash" color="danger" (click)="deletar(historico)"></ion-icon>
+          <ion-label class="center">Histórico de consumo vazio!</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="light" *ngFor="let historicoConsumo of consumo">
+    <ion-card-header>
+      <ion-item>
+        <ion-label class="title-card" (click)="itemConsumoSelecionado(historicoConsumo)">Consumo</ion-label>
+        <ion-icon class="icon" name="trash" color="danger" (click)="deletar(historicoConsumo)"></ion-icon>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label (click)="itemConsumoSelecionado(historicoConsumo)">{{historicoConsumo.resultadoConsumoAnimal}} kg
+            por dia</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label (click)="itemConsumoSelecionado(historicoConsumo)">{{historicoConsumo.resultadoMsHec}} Kg de MS por
+            ano</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label (click)="itemConsumoSelecionado(historicoConsumo)">{{historicoConsumo.resultadoMsAnoHec}} Kg por
+            ano por Hec</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

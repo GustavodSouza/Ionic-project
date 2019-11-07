@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'historico-calculo', loadChildren: './historico-calculo/historico-calculo.module#HistoricoCalculoPageModule' },
   { path: 'calcular-consumo-animal', loadChildren: './calcular-consumo-animal/calcular-consumo-animal.module#CalcularConsumoAnimalPageModule' },
   { path: 'detalhes-historico', loadChildren: './detalhes-historico/detalhes-historico.module#DetalhesHistoricoPageModule' },
+  { path: 'detalhes-historico-consumo', loadChildren: './detalhes-historico-consumo/detalhes-historico-consumo.module#DetalhesHistoricoConsumoPageModule' },
 ];
 
 @NgModule({

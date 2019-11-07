@@ -3,6 +3,7 @@ import { PiqueteModel } from '../model/piqueteModel';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { PiqueteDaoService } from '../piqueteDAO/piqueteDAO.service';
 import { Router, NavigationExtras } from '@angular/router';
+import { ConsumoAnimalModel } from '../model/consumoAnimalModel';
 
 @Component({
   selector: 'app-historico-calculo',
@@ -12,6 +13,7 @@ import { Router, NavigationExtras } from '@angular/router';
 export class HistoricoCalculoPage implements OnInit {
 
   public piquete : PiqueteModel[] = [];
+  public consumo: ConsumoAnimalModel[] = [];
 
   constructor(private loading: LoadingController,
               private piqueteDao: PiqueteDaoService,
@@ -22,22 +24,26 @@ export class HistoricoCalculoPage implements OnInit {
   }
 
   //Essa função é a responsável por carregar os dados no começo da tela
-  async carregando(){
+  async loadPiquete(){
     let loader = await this.loading.create({
       message : 'Carregando Histórico ...'
     });
     await loader.present();
 
-    this.piqueteDao.getCalculo().then( clis =>{
-      this.piquete = clis;
+    this.piqueteDao.getCalculo().then( piquete =>{
+      this.piquete = piquete;
       loader.dismiss();
     });
 
-   }
-
+    this.piqueteDao.getCalculoConsumo().then( consumo =>{
+        this.consumo = consumo;
+      loader.dismiss();
+    });
+  }
+  
    //Chama a função acima para carregar os contatos na tela.
    ionViewWillEnter(){
-    this.carregando();
+   this.loadPiquete();
   }
 
   //Função para mostrar um toast na tela...Nada demais
@@ -48,21 +54,34 @@ export class HistoricoCalculoPage implements OnInit {
     });
     toast.present();
   }
-
+  
   deletar(piquete: PiqueteModel): void {
       this.piqueteDao.deletar(piquete.id);
       this.rota.navigate['/historico-calculo'];
-      this.carregando();
+      this.loadPiquete();
       this.presentToast();
   }
 
-  selecionado(piquete: PiqueteModel): void {
+  piqueteSelecionado(piquete: PiqueteModel): void {
     let extras : NavigationExtras = {
       state : {
-       historico_selecionado : piquete
+       piquete_selecionado : piquete
       }
     }
+    
  
     this.rota.navigate(['/detalhes-historico'], extras);
   }
+
+  itemConsumoSelecionado(consumo: ConsumoAnimalModel): void {
+    let extras : NavigationExtras = {
+      state : {
+       consumo_selecionado : consumo
+      }
+    }
+    
+ 
+    this.rota.navigate(['/detalhes-historico-consumo'], extras);
+  }
+
 }

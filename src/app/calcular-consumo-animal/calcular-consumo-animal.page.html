@@ -3,8 +3,8 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Consumo Animal
+    <ion-title class="cursive">
+      Consumo animal
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,44 +12,46 @@
 <ion-content color="secondary">
   <ion-card color="light">
     <ion-card-header>
-      <ion-card-title>Cálculo de Consumo Anim.</ion-card-title>
+      <ion-card-title class="cursive">Cálculo de consumo anim.</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
+      <ion-label position="stacked">Ingestão animal(%)</ion-label>
       <ion-item>
-        <ion-label position="floating">Ingestão Animal(%)</ion-label>
-        <ion-input type="number" [(ngModel)]="consumo.ingestaoAnimal"></ion-input>
+        <ion-input type="number" [value]="ingestaoAnimal" placeholder="Ingestão Animal(%)" [(ngModel)]="consumo.ingestaoAnimal"></ion-input>
       </ion-item>
+      <ion-label position="stacked">Peso médio dos animais</ion-label>
       <ion-item>
-        <ion-label position="floating">Peso Médio dos Animais</ion-label>
-        <ion-input type="number" [(ngModel)]="consumo.pesoMedioAnimal"></ion-input>
+        <ion-input type="number" [value]="pesoMedioAnimal" placeholder="Peso médio dos animais" [(ngModel)]="consumo.pesoMedioAnimal"></ion-input>
       </ion-item>
+      <ion-label position="stacked">Número de animais</ion-label>
       <ion-item>
-        <ion-label position="floating">Número de Animais</ion-label>
-        <ion-input type="number" [(ngModel)]="consumo.numeroAnimais"></ion-input>
+        <ion-input type="number" [value]="numeroAnimais" placeholder="Número de animais" [(ngModel)]="consumo.numeroAnimais"></ion-input>
       </ion-item>
+      <ion-label position="stacked">Perda de pastejo(%)</ion-label>
       <ion-item>
-        <ion-label position="floating">Perda de Pastejo(%)</ion-label>
-        <ion-input type="number" [(ngModel)]="consumo.perdaPastejo"></ion-input>
+        <ion-input type="number" [value]="perdaPastejo" placeholder="Perda de pastejo(%)" [(ngModel)]="consumo.perdaPastejo"></ion-input>
       </ion-item>
+      <ion-label position="stacked">Estacionalidade(%)</ion-label>
       <ion-item>
-        <ion-label position="floating">Estacionalidade(%)</ion-label>
-        <ion-input type="number" [(ngModel)]="consumo.estacionalidade"></ion-input>
+        <ion-input type="number" [value]="estacionalidade" placeholder="Estacionalidade(%)" [(ngModel)]="consumo.estacionalidade"></ion-input>
       </ion-item>
-      <hr><hr>Resultados:
-      <ion-item>
-          <ion-label position="floating">Consumo Animal</ion-label>
-          <ion-input type="number" placeholder="0" id="resultadoConsumoAnimal"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Matéria Seca por Hec.</ion-label>
-            <ion-input type="number" placeholder="0" id="resultadoMsPorHec"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label position="floating">MS por Ano por Hec.</ion-label>
-              <ion-input type="number" placeholder="0" id="resultadoMsPorHecPorAno"></ion-input>
-            </ion-item>
-      <ion-button expand="block" (click)="calcular()">Calcular</ion-button>
+      <hr>
+      <hr><strong>Resultados:</strong><br>
+      <ion-label color="dark">Consumo animal</ion-label>
+      <ion-item lines="full">
+        <ion-label id="resultadoConsumoAnimal">0</ion-label>
+      </ion-item>
+      <ion-label color="dark">Matéria seca por hec.</ion-label>
+      <ion-item lines="full">
+        <ion-label id="resultadoMsPorHec">0</ion-label>
+      </ion-item>
+      <ion-label color="dark">MS por ano por hec.</ion-label>
+      <ion-item lines="full">
+        <ion-label id="resultadoMsPorHecPorAno">0</ion-label>
+      </ion-item>
+      <ion-button (click)="calcular()">Calcular</ion-button>
+      <ion-button color="warning" (click)="limparInputs()">Limpar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -12,22 +12,22 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Página Inicial',
+      title: 'Página inicial',
       url: '/home',
       icon: 'home'
     },
     {
-      title: 'Calcular Piquete',
+      title: 'Calcular piquete(s)',
       url: '/calcular-piquete',
       icon: 'calculator'
     },
     {
-      title: 'Consumo Animal',
+      title: 'Calcular consumo anim.',
       url: '/calcular-consumo-animal',
       icon: 'calculator'
     },
     {
-      title: 'Histórico de Calculos',
+      title: 'Histórico de cálculos',
       url: '/historico-calculo',
       icon: 'clipboard'
     },

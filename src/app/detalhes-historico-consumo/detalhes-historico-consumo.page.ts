@@ -1,35 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { PiqueteModel } from '../model/piqueteModel';
+import { ConsumoAnimalModel } from '../model/consumoAnimalModel';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { PiqueteDaoService } from '../piqueteDAO/piqueteDAO.service';
 
 @Component({
-  selector: 'app-detalhes-historico',
-  templateUrl: './detalhes-historico.page.html',
-  styleUrls: ['./detalhes-historico.page.scss'],
+  selector: 'app-detalhes-historico-consumo',
+  templateUrl: './detalhes-historico-consumo.page.html',
+  styleUrls: ['./detalhes-historico-consumo.page.scss'],
 })
-export class DetalhesHistoricoPage implements OnInit {
+export class DetalhesHistoricoConsumoPage implements OnInit {
 
-  public piquete: PiqueteModel = new PiqueteModel();
+  public consumo: ConsumoAnimalModel = new ConsumoAnimalModel();
 
-  constructor(private rota: Router,
-              private rotaAtiva: ActivatedRoute, 
-              private toastController: ToastController,
+  constructor(private rotaAtiva: ActivatedRoute,
+              private rota: Router, 
+              private toastController: ToastController, 
               private piqueteDao: PiqueteDaoService) { 
     this.rotaAtiva.queryParams.subscribe(params => {
 
       if (this.rota.getCurrentNavigation().extras.state) {
-        this.piquete = this.rota
+        this.consumo = this.rota
           .getCurrentNavigation().extras
-          .state.piquete_selecionado;
+          .state.consumo_selecionado;
       }
     }
     )
   }
 
   ngOnInit() {
-  }
+  } 
 
   //Função para mostrar um toast na tela...Nada demais
   async presentToast() {
@@ -44,9 +44,10 @@ export class DetalhesHistoricoPage implements OnInit {
     this.rota.navigate(['/historico-calculo']);
   }
 
-  deletar(piquete: PiqueteModel): void {
-    this.piqueteDao.deletar(piquete.id);
+  deletar(consumo: ConsumoAnimalModel): void {
+    this.piqueteDao.deletar(consumo.id);
     this.rota.navigate(['/historico-calculo']);
     this.presentToast();
 }
+
 }
