@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController, ToastController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -32,18 +32,25 @@ export class AppComponent {
       icon: 'clipboard'
     },
     {
+      title: 'Como funciona',
+      url: '/como-funciona',
+      icon: 'help'
+    },
+    {
       title: 'Sobre nós',
       url: '/sobre',
       icon: 'contacts'
     }
   ];
 
+  public count = 0;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
   ) {
     this.initializeApp();
+
   }
 
   initializeApp() {
@@ -51,6 +58,8 @@ export class AppComponent {
       this.statusBar.styleBlackOpaque;
       this.statusBar.backgroundColorByHexString('#49552a');
       this.splashScreen.hide();
+
     });
   }
+
 }

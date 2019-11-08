@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="cursive">
+    <ion-title>
       Consumo animal
     </ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
 <ion-content color="secondary">
   <ion-card color="light">
     <ion-card-header>
-      <ion-card-title class="cursive">Cálculo de consumo anim.</ion-card-title>
+      <ion-card-title>Cálculo de consumo anim.</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
@@ -50,8 +50,14 @@
       <ion-item lines="full">
         <ion-label id="resultadoMsPorHecPorAno">0</ion-label>
       </ion-item>
-      <ion-button (click)="calcular()">Calcular</ion-button>
-      <ion-button color="warning" (click)="limparInputs()">Limpar</ion-button>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="calcular()" color="primary">Calcular</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="warning" (click)="limparInputs()">Limpar tela</ion-button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

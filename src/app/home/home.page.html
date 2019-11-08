@@ -3,40 +3,42 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="cursive">
+    <ion-title>
       Meu piquete
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="secondary">
-    <ion-card class="welcome-card" color="light">
-      <img src="/assets/rebanho.jpg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Começando</ion-card-subtitle>
-        <ion-card-title>Manejo animal utilizando <strong>piquetes</strong></ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div><p>O manejo correto dos piquetes é o
-            ponto de partida para assegurar a eficiência do
-            pastejo rotacionado. Existem algumas regras
-            básicas a serem seguidas, mas é a experiência
-            e o treinamento que garantem o melhor
-            resultado.
-            A grande dúvida dos pecuaristas é
-            quanto à definição do número e do tamanho
-            dos piquetes e à adequação desses piquetes a
-            determinado rebanho. Planejar esses pontos é
-            fundamental para o sucesso do manejo
-            rotacionado de pastagens.
-            O objetivo deste aplicativo é mostrar
-            como realizar alguns cálculos, de fácil
-            execução, que ajudam no planejamento da
-            implantação de sistemas de pastejo
-            rotacionado.</p></div>
-            <div>
-
-            </div>
-      </ion-card-content>
-    </ion-card>
+  <ion-card class="welcome-card" color="light">
+    <img src="/assets/imgs/rebanho.jpg" alt="" />
+    <ion-card-header>
+      <ion-card-subtitle>Começando</ion-card-subtitle>
+      <ion-card-title>Manejo animal utilizando <strong>piquetes</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>O manejo correto dos piquetes é o
+        ponto de partida para assegurar a eficiência do
+        pastejo rotacionado. Existem algumas regras
+        básicas a serem seguidas, mas é a experiência
+        e o treinamento que garantem o melhor
+        resultado.
+        A grande dúvida dos pecuaristas é
+        quanto à definição do número e do tamanho
+        dos piquetes e à adequação desses piquetes a
+        determinado rebanho. Planejar esses pontos é
+        fundamental para o sucesso do manejo
+        rotacionado de pastagens.
+        O objetivo deste aplicativo é mostrar
+        como realizar alguns cálculos, de fácil
+        execução, que ajudam no planejamento da
+        implantação de sistemas de pastejo
+        rotacionado.</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button color="secondary" (click)="comoFunciona()">
+      <ion-icon name="help"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

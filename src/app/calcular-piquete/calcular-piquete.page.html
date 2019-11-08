@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="cursive">
+    <ion-title>
       Calcular piquete(s)
     </ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
 <ion-content color="secondary">
   <ion-card color="light">
     <ion-card-header>
-      <ion-card-title class="cursive">Calcular nº de piquete(s)</ion-card-title>
+      <ion-card-title>Calcular nº de piquete(s)</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -35,7 +35,7 @@
       </ion-list>
       <ion-label position="stacked">Periodo(s) de ocupação(ões)</ion-label>
       <ion-item>
-        <ion-input type="number" [value]="periodoOcupacao" placeholder="Periodo(s) de ocupação(ões)"
+        <ion-input type="number" [value]="periodoOcupacao" placeholder="Periodo(s) em dia(s)"
           [(ngModel)]="piquete.periodoOcupacao">
         </ion-input>
       </ion-item>
@@ -45,8 +45,14 @@
       <ion-item lines="full">
         <ion-label id="resultado">0</ion-label>
       </ion-item>
-      <ion-button (click)="calcular()" color="primary">Calcular</ion-button>
-      <ion-button color="warning" (click)="limparInputs()">Limpar</ion-button>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="calcular()" color="primary">Calcular</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="warning" (click)="limparInputs()">Limpar tela</ion-button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -3,16 +3,16 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="cursive">
+    <ion-title>
       Detalhes do cálculo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
+<ion-content color="secondary">
+  <ion-card color="light">
     <ion-card-header>
-      <ion-card-title class="center" class="cursive">Cálculo realizado em: {{consumo.dataCompleta}}</ion-card-title>
+      <ion-card-title class="center">Cálculo realizado em: {{consumo.dataCompleta}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-label color="dark">Consumo do Animal inserido</ion-label>
@@ -39,15 +39,15 @@
       <hr><strong>Resultados:</strong><br>
       <ion-label color="dark">Consumo animal</ion-label>
       <ion-item lines="full">
-        <ion-label>{{consumo.resultadoConsumoAnimal}} %</ion-label>
+        <ion-label>{{consumo.resultadoConsumoAnimal}} kg por dia</ion-label>
       </ion-item>
       <ion-label color="dark">Matéria seca por hectare</ion-label>
       <ion-item lines="full">
-        <ion-label>{{consumo.resultadoMsHec}} %</ion-label>
+        <ion-label>{{consumo.resultadoMsHec}} Kg de MS por ano</ion-label>
       </ion-item>
       <ion-label color="dark">Matéria seca por hectare por ano</ion-label>
       <ion-item lines="full">
-        <ion-label>{{consumo.resultadoMsAnoHec}} %</ion-label>
+        <ion-label>{{consumo.resultadoMsAnoHec}} Kg por ano por hec</ion-label>
       </ion-item>
     </ion-card-content>
     <ion-button (click)="deletar(consumo)" color="danger" expand="full">

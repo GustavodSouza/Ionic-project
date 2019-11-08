@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="cursive">
+    <ion-title>
       Histórico de cálculos
     </ion-title>
   </ion-toolbar>
@@ -47,7 +47,7 @@
     <ion-card-header>
       <ion-item>
         <ion-label class="title-card" (click)="itemConsumoSelecionado(historicoConsumo)">Consumo</ion-label>
-        <ion-icon class="icon" name="trash" color="danger" (click)="deletar(historicoConsumo)"></ion-icon>
+        <ion-icon name="trash" color="danger" (click)="deletar(historicoConsumo)"></ion-icon>
       </ion-item>
     </ion-card-header>
     <ion-card-content>

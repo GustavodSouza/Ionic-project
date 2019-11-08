@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'calcular-consumo-animal', loadChildren: './calcular-consumo-animal/calcular-consumo-animal.module#CalcularConsumoAnimalPageModule' },
   { path: 'detalhes-historico', loadChildren: './detalhes-historico/detalhes-historico.module#DetalhesHistoricoPageModule' },
   { path: 'detalhes-historico-consumo', loadChildren: './detalhes-historico-consumo/detalhes-historico-consumo.module#DetalhesHistoricoConsumoPageModule' },
+  { path: 'como-funciona', loadChildren: './como-funciona/como-funciona.module#ComoFuncionaPageModule' },
 ];
 
 @NgModule({
